@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Рыбный совхоз \"КОРПАЧ\"");
+$APPLICATION->SetTitle(" Компания Рыбный совхоз \"КОРПАЧ\"");
 ?><!-- About Section --> <section class="page-section bg-primary" id="home">
 <div class="container">
 	<div class="row justify-content-center">
@@ -126,12 +126,12 @@ $APPLICATION->SetTitle("Рыбный совхоз \"КОРПАЧ\"");
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array("","DESCRIPTION",""),
-		"SET_BROWSER_TITLE" => "Y",
+		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "Y",
 		"SET_META_DESCRIPTION" => "Y",
 		"SET_META_KEYWORDS" => "Y",
 		"SET_STATUS_404" => "Y",
-		"SET_TITLE" => "Y",
+		"SET_TITLE" => "N",
 		"SHOW_404" => "Y",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
@@ -139,23 +139,18 @@ $APPLICATION->SetTitle("Рыбный совхоз \"КОРПАЧ\"");
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N"
 	)
-);?> <!-- Contact Section --> <section class="page-section" id="contact">
-<div class="container">
-	<div class="row justify-content-center">
-		<div class="col-lg-8 text-center">
-			<h2 class="mt-0"><?$APPLICATION->IncludeComponent(
-	"bitrix:news.detail",
-	"fish_detail",
+);?><?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"fish_news",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_ELEMENT_CHAIN" => "N",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
-		"BROWSER_TITLE" => "-",
+		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
@@ -167,34 +162,78 @@ $APPLICATION->SetTitle("Рыбный совхоз \"КОРПАЧ\"");
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"ELEMENT_CODE" => "",
-		"ELEMENT_ID" => $_REQUEST["ELEMENT_ID"],
 		"FIELD_CODE" => array("",""),
-		"IBLOCK_ID" => "4",
-		"IBLOCK_TYPE" => "services",
-		"IBLOCK_URL" => "",
+		"FILTER_NAME" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "5",
+		"IBLOCK_TYPE" => "news",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"INCLUDE_SUBSECTIONS" => "Y",
 		"MESSAGE_404" => "",
-		"META_DESCRIPTION" => "-",
-		"META_KEYWORDS" => "-",
+		"NEWS_COUNT" => "3",
 		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
-		"PAGER_TITLE" => "Страница",
+		"PAGER_TITLE" => "Новости",
+		"PARENT_SECTION" => "",
+		"PARENT_SECTION_CODE" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
 		"PROPERTY_CODE" => array("",""),
-		"SET_BROWSER_TITLE" => "Y",
-		"SET_CANONICAL_URL" => "N",
+		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "Y",
 		"SET_META_KEYWORDS" => "Y",
 		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "Y",
+		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
-		"STRICT_SECTION_CHECK" => "N",
-		"USE_PERMISSIONS" => "N",
-		"USE_SHARE" => "N"
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N"
 	)
-);?>Связаться с нами</h2>
+);?> <!-- Contact Section --> <br>
+ <br>
+<br>
+ <br>
+<br>
+ <?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list",
+	"",
+	Array(
+		"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"COUNT_ELEMENTS" => "Y",
+		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+		"FILTER_NAME" => "sectionsFilter",
+		"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => "catalog",
+		"SECTION_CODE" => "",
+		"SECTION_FIELDS" => array("",""),
+		"SECTION_ID" => $_REQUEST["SECTION_ID"],
+		"SECTION_URL" => "",
+		"SECTION_USER_FIELDS" => array("",""),
+		"SHOW_PARENT_NAME" => "Y",
+		"TOP_DEPTH" => "2",
+		"VIEW_MODE" => "LINE"
+	)
+);?><br>
+ <br>
+<h2></h2>
+ <br>
+ <section class="page-section" id="contact">
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-8 text-center">
+			<h2 class="mt-0">Связаться с нами</h2>
 			<hr class="divider my-4">
 		</div>
 	</div>

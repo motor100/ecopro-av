@@ -40,6 +40,17 @@ global $USER;
     <? $APPLICATION->ShowPanel(); ?> 
   </div>
 
+  <p style="margin-bottom: 100px"></p>
+
+  <!-- Search -->
+  <div class="search">
+    <?$APPLICATION->IncludeComponent("bitrix:search.form","",Array(
+      "USE_SUGGEST" => "N",
+      "PAGE" => "#SITE_DIR#search/index.php"
+    )
+  );?>
+  </div>
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">

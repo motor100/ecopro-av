@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новая страница");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
-	"fish_detail_addon",
+	"fish_detail",
 	Array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_ELEMENT_CHAIN" => "N",
@@ -28,8 +28,8 @@ $APPLICATION->SetTitle("Новая страница");
 		"ELEMENT_CODE" => "",
 		"ELEMENT_ID" => $_REQUEST["ID"],
 		"FIELD_CODE" => array("",""),
-		"IBLOCK_ID" => "4",
-		"IBLOCK_TYPE" => "services",
+		"IBLOCK_ID" => "5",
+		"IBLOCK_TYPE" => "news",
 		"IBLOCK_URL" => "",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
 		"MEDIA_PROPERTY" => "",
@@ -40,7 +40,7 @@ $APPLICATION->SetTitle("Новая страница");
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Страница",
-		"PROPERTY_CODE" => array("SECOND_TEXT1","",""),
+		"PROPERTY_CODE" => array("",""),
 		"SET_BROWSER_TITLE" => "Y",
 		"SET_CANONICAL_URL" => "N",
 		"SET_LAST_MODIFIED" => "N",

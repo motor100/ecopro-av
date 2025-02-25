@@ -50,6 +50,30 @@ $this->setFrameMode(true);
 			<?echo $arResult["PREVIEW_TEXT"];?>
 		<?endif?>
 		<div style="clear:both"></div>
+		<?if(isset($arResult["PROPERTIES"]["SECOND_IMAGE1"]["VALUE"])):?>
+			<img
+				class="second_picture"
+				border="0"
+				src="<?= CFile::GetPath($arResult["PROPERTIES"]["SECOND_IMAGE1"]["VALUE"]); ?>"
+			/>
+		<?endif?>
+		<?$im = CFile::GetPath($arResult["PROPERTIES"]["SECOND_IMAGE1"]["VALUE"]);?> 
+		<!-- <img src="<? // echo $im; ?>"> -->
+		<? echo $arResult['DISPLAY_PROPERTIES']['SECOND_TEXT']['DISPLAY_VALUE'];?>
+		<? echo $arResult['DISPLAY_PROPERTIES']['SECOND_TEXT1']["VALUE"]["TEXT"];?>
+		<? $arResult['DISPLAY_PROPERTIES']['SECOND_TEXT'] = CIBlockFormatProperties::GetDisplayValue($arResult, $PRODUCT_ID); ?>
+		<? echo $arResult['DISPLAY_PROPERTIES']['SECOND_TEXT']['DISPLAY_VALUE']; ?>
+		<? echo htmlspecialcharsBack($arResult["PROPERTIES"]["SECOND_TEXT"]["VALUE"]["TEXT"])?>
+		<?if((!isset($arParams["DISPLAY_SECOND_TEXT"]) || $arParams["DISPLAY_SECOND_TEXT"]!="N") && ($arResult["FIELDS"]["SECOND_TEXT"] ?? '') !== ''):?>
+			<p><?=$arResult["FIELDS"]["SECOND_TEXT"];unset($arResult["FIELDS"]["SECOND_TEXT"]);?></p>
+		<?endif;?>
+		<?=$arResult["PROPERTIES"]["SECOND_TEXT"]["VALUE"]["TEXT"]; ?>
+		<?=$arResult["PROPERTIES"]["SECOND_TEXT"]["~VALUE"]["TEXT"]?>
+		<? echo $arResult["PROPERTIES"]["SECOND_TEXT"]["VALUE"]["TEXT"];?>
+		<? //echo isset($arResult["PROPERTIES"]["SECOND_IMAGE1"]); ?>
+		<pre>
+		<? //var_dump($arResult); ?>
+		</pre>
 		<br />
 	</div>
 </section>
